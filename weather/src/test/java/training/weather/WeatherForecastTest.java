@@ -23,8 +23,33 @@ public class WeatherForecastTest {
 		System.out.println(forecast);
 	}
 
-	/*@Test
-	public void geocode_test() { // Unit test for
-		String geocode =
-	}*/
+	@Test
+	public void geocode_test() { // Unit test for parseGeocode();
+		String[] coordinates = null;
+
+		try {
+			coordinates = WeatherForecast.parseGeocode("Barcelona");
+			System.out.println("Sucessfully fetched city coordinates");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		assert coordinates != null : "Could not fetch coordinates from geocode.xyz";
+	}
+
+	@Test
+	public void openmeteo_test() { // Unit test for callOpenMeteo()
+		String[] testCoordinates = {"40.42955", "-3.64539"};
+		Date testDate = new Date();
+		String response = null;
+
+		try {
+			response = WeatherForecast.callOpenMeteo(testCoordinates, testDate);
+			System.out.println(response);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		assert response != null : "Could not fetch forecast from Open-Meteo";
+	}
 }
