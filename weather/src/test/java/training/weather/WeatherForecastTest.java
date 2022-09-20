@@ -23,8 +23,8 @@ public class WeatherForecastTest {
 		System.out.println(forecast);
 	}
 
-	@Test
+	/*@Test
 	public void geocode_test() { // Unit test for
 		String geocode =
-	}
+	}*/
 }
