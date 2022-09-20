@@ -10,8 +10,7 @@ public class WeatherForecastTest {
 
 	@Test
 	public void unfinished_test() throws IOException {
-		WeatherForecast weatherForecast = new WeatherForecast();
-		String forecast = weatherForecast.getCityWeather("Madrid", new Date());
+		String forecast = WeatherForecast.getCityWeather("Madrid", new Date());
 		System.out.println(forecast);
 	}
 }
